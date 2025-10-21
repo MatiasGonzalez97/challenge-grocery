@@ -4,7 +4,7 @@ Step-by-Step Setup Guide
 
 1. Clone the Repository
 
-git clone <your-repository-url>
+git clone [<your-repository-url>](https://github.com/MatiasGonzalez97/challenge-grocery)
 
 2. Install Dependencies
 
