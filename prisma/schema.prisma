@@ -10,25 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// User model for authentication
 model User {
   id        Int      @id @default(autoincrement())
-  email     String   @unique // Using email as the login field
-  password  String   // This will store the hashed password
-  items     Item[]   // Relation: A user can have many items
+  email     String   @unique 
+  password  String   
+  items     Item[]   
   createdAt DateTime @default(now())
 }
 
-// Grocery item model
 model Item {
   id        Int      @id @default(autoincrement())
   name      String
   quantity  Int      @default(1)
-  store     String?  // Optional field
+  store     String?  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Relation: The item belongs to one user
   user      User     @relation(fields: [userId], references: [id])
-  userId    Int      // Foreign key
+  userId    Int      
 }
